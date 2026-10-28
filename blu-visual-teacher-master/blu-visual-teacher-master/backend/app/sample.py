@@ -1,0 +1,12 @@
+from datetime import datetime,timezone
+def firewall_lesson():
+    def s(i,k,d,t,n,c,**kw):
+        return {"id":i,"kind":k,"duration":d,"title":t,"narration":{"en":n},"captions":{"en":c.split("|")},**kw}
+    return {"id":"sample-firewall","title":"How a Firewall Protects a Computer","topic":"How a firewall filters network traffic","level":"beginner","durationMinutes":1,"languages":["en"],"sample":True,"sampleNote":"Bundled sample; no AI or voice is implied.","createdAt":datetime.now(timezone.utc).isoformat(),"status":"ready","scenes":[
+    s("s1","title",10,"A digital gate","A firewall checks network traffic and decides what may pass.","A firewall checks traffic|What may pass?",eyebrow="NETWORK SECURITY",headline="How a Firewall Protects a Computer",sub="A digital gate for network traffic",points=["Inspect incoming traffic","Allow trusted connections","Block unwanted access"]),
+    s("s2","diagram",20,"Traffic flow","Incoming packets reach the firewall. Allowed traffic reaches the computer; blocked traffic stops at the firewall.","Internet traffic arrives|The firewall checks its rules|Allowed traffic reaches the computer|Blocked traffic stops here",
+    nodes=[{"id":"net","x":10,"y":50,"label":"Internet","sub":"incoming packets","tone":"neutral"},{"id":"fw","x":48,"y":50,"label":"Firewall","sub":"checks rules","tone":"focus"},{"id":"pc","x":88,"y":28,"label":"Computer","sub":"allowed","tone":"good"},{"id":"drop","x":88,"y":75,"label":"Blocked","sub":"denied","tone":"bad"}],
+    edges=[{"id":"a","from":"net","to":"fw","label":"traffic","tone":"neutral"},{"id":"b","from":"fw","to":"pc","label":"ALLOW","tone":"good"},{"id":"c","from":"fw","to":"drop","label":"DENY","tone":"bad"}],steps=[],legend=[]),
+    s("s3","code",18,"Allow and deny rules","Rules allow secure web traffic, deny unexpected remote logins, and block anything unmatched.","Rules run in order|The first match decides|Unmatched traffic is blocked",
+    file="firewall.rules",language="text",lines=["# evaluated top to bottom","allow tcp port 443   # secure web","deny  tcp port 3389  # remote login","deny  any            # default block"],beats=[],probes=[]),
+    s("s4","title",12,"Three takeaways","A firewall inspects traffic, applies rules, and blocks connections that are not allowed.","Inspect traffic|Apply clear rules|Block what is not allowed",eyebrow="KEY TAKEAWAYS",headline="Inspect. Decide. Protect.",sub="A firewall applies the rules you define.",points=["Check each connection","Allow only what is needed","Block unmatched traffic"])]}

@@ -1,0 +1,14 @@
+{
+  "lesson_id": "sample-001",
+  "title": "Photosynthesis",
+  "language": "en",
+  "scenes": [
+    {
+      "id": "scene-1",
+      "caption": "Plants use sunlight to make food.",
+      "narration": "Plants use sunlight, water, and carbon dioxide to make food.",
+      "audio_file": "test_output.wav",
+      "duration_seconds": 8
+    }
+  ]
+}

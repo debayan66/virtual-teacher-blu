@@ -1,0 +1,202 @@
+/* ==========================================================================
+   Blu Visual Teacher — design tokens
+   One source of truth for colour, type, depth, motion and spacing.
+
+   Brand system: ORANGE x BLACK x WHITE x BLUE
+   - Orange  -> primary actions, active nav, progress, selected states
+   - Black   -> headings + the dark creative-studio workspace
+   - White   -> primary surfaces (auth, dashboard, learning cards)
+   - Blue    -> links, info states, educational accents, secondary actions
+   ========================================================================== */
+
+:root {
+  /* --- brand palette ---------------------------------------------------- */
+  --brand-orange: #ff7900;
+  --brand-orange-dark: #e96500;
+  --brand-orange-light: #fff0e3;
+  --brand-orange-soft: #fff8f2;
+  --brand-black: #111111;
+  --brand-black-2: #191919;
+  --brand-blue: #2563eb;
+  --brand-blue-deep: #173b8f;
+  --brand-blue-light: #eaf2ff;
+  --brand-white: #ffffff;
+
+  /* --- canvas (light by default; studio re-scopes to dark) -------------- */
+  --bg: #f8fafc;
+  --bg-deep: #fff8f2;
+  --surface: #ffffff;
+  --surface-2: #f8fafc;
+  --surface-3: #fff0e3;
+
+  /* --- accent aliases ---------------------------------------------------
+     Components keep the original names; the brand maps them to orange/blue
+     so a single token swap re-points every accent in the product.          */
+  --cyan: var(--brand-orange);
+  --blue: var(--brand-blue);
+  --violet: var(--brand-blue-deep);
+  --coral: var(--brand-orange-dark);
+
+  /* --- ink --------------------------------------------------------------- */
+  --ink: #171717;
+  --ink-2: #475569;
+  --ink-3: #64748b;
+  --ink-on-accent: #ffffff;
+
+  /* --- semantic ---------------------------------------------------------- */
+  --ok: #15803d;
+  --ok-dim: rgba(21, 128, 61, 0.1);
+  --warn: #b45309;
+  --warn-dim: rgba(180, 83, 9, 0.12);
+  --err: #dc2626;
+  --err-dim: rgba(220, 38, 38, 0.1);
+
+  /* --- derived accents --------------------------------------------------- */
+  --cyan-glow: rgba(255, 121, 0, 0.45);
+  --blue-glow: rgba(37, 99, 235, 0.35);
+  --violet-glow: rgba(23, 59, 143, 0.3);
+  --accent-soft: rgba(255, 121, 0, 0.1);
+  --accent-soft-strong: rgba(255, 121, 0, 0.18);
+  --info-soft: rgba(37, 99, 235, 0.1);
+
+  /* --- lines & depth ----------------------------------------------------- */
+  --hair: rgba(23, 23, 23, 0.1);
+  --hair-strong: rgba(23, 23, 23, 0.2);
+  --hair-soft: rgba(23, 23, 23, 0.05);
+  --shadow-1: 0 1px 2px rgba(17, 17, 17, 0.06);
+  --shadow-2: 0 18px 40px -22px rgba(17, 17, 17, 0.3);
+  --shadow-lift: 0 30px 60px -28px rgba(17, 17, 17, 0.38);
+  --inset-hi: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+  /* --- component surfaces (light default) -------------------------------- */
+  --panel-1: rgba(255, 255, 255, 0.96);
+  --panel-2: rgba(248, 250, 252, 0.92);
+  --field: #ffffff;
+  --field-focus: #ffffff;
+  --btn: #ffffff;
+  --btn-hover: #f1f5f9;
+  --btn-ink: var(--ink);
+  --ghost-hover: rgba(23, 23, 23, 0.06);
+  --seg: #f1f5f9;
+  --seg-active: var(--brand-orange);
+  --seg-active-ink: #ffffff;
+  --pill-bg: rgba(23, 23, 23, 0.04);
+  --bar-track: rgba(23, 23, 23, 0.09);
+  --topbar-bg: rgba(255, 255, 255, 0.86);
+  --rail-bg: linear-gradient(180deg, #ffffff, #f8fafc);
+  --tooltip-bg: #111111;
+  --toast-bg: #ffffff;
+  --scrim: rgba(17, 17, 17, 0.55);
+  --state-bg: rgba(255, 255, 255, 0.6);
+  --skeleton-a: rgba(23, 23, 23, 0.05);
+  --skeleton-b: rgba(23, 23, 23, 0.11);
+
+  /* --- focus ------------------------------------------------------------- */
+  --focus-ring: 0 0 0 3px rgba(255, 121, 0, 0.32);
+  --focus-outline: 2px solid var(--brand-orange);
+
+  /* --- type -------------------------------------------------------------- */
+  --font-display: 'Space Grotesk', 'Inter', system-ui, -apple-system, 'Segoe UI',
+    'Noto Sans Devanagari', 'Nirmala UI', 'Kohinoor Devanagari', sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans Devanagari',
+    'Nirmala UI', 'Latha', 'Mangal', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', 'Consolas', monospace;
+
+  /* Native-script fallbacks for Indic / Arabic / CJK labels. */
+  --font-script: 'Noto Sans Devanagari', 'Nirmala UI', 'Latha', 'Gadugi', 'Microsoft YaHei',
+    'Yu Gothic', 'Malgun Gothic', 'Segoe UI', system-ui, sans-serif;
+
+  /* --- rhythm ------------------------------------------------------------ */
+  --rail-w: 76px;
+  --rail-w-open: 232px;
+  --topbar-h: 60px;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --cut: 14px; /* signature cut corner size */
+
+  /* --- motion ------------------------------------------------------------ */
+  --t-fast: 140ms;
+  --t-base: 220ms;
+  --t-slow: 420ms;
+  --t-scene: 640ms;
+  --ease: cubic-bezier(0.22, 0.68, 0.16, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* --- atmosphere -------------------------------------------------------- */
+  --grid-size: 46px;
+  --grid-line: rgba(23, 59, 143, 0.06);
+  --aurora-1: rgba(255, 121, 0, 0.1);
+  --aurora-2: rgba(37, 99, 235, 0.09);
+  --aurora-3: rgba(23, 59, 143, 0.06);
+  color-scheme: light;
+}
+
+/* --------------------------------------------------------------------------
+   Dark scope — the video editor (Lesson Studio) and any premium dark band.
+   Re-pointing the same tokens means every child component flips correctly
+   without carrying two sets of styles.
+   -------------------------------------------------------------------------- */
+.scope-dark {
+  --bg: var(--brand-black);
+  --bg-deep: #0b0b0b;
+  --surface: var(--brand-black-2);
+  --surface-2: #1f1f1f;
+  --surface-3: #262626;
+
+  --ink: #f8fafc;
+  --ink-2: #c3cad6;
+  --ink-3: #98a2b3;
+  --ink-on-accent: #ffffff;
+
+  --hair: rgba(255, 255, 255, 0.12);
+  --hair-strong: rgba(255, 255, 255, 0.24);
+  --hair-soft: rgba(255, 255, 255, 0.06);
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.6);
+  --shadow-2: 0 18px 50px -20px rgba(0, 0, 0, 0.85);
+  --shadow-lift: 0 30px 70px -30px rgba(0, 0, 0, 0.9);
+  --inset-hi: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  --panel-1: rgba(25, 25, 25, 0.96);
+  --panel-2: rgba(17, 17, 17, 0.92);
+  --field: #0f0f0f;
+  --field-focus: #111111;
+  --btn: #1f1f1f;
+  --btn-hover: #2a2a2a;
+  --btn-ink: var(--ink);
+  --ghost-hover: rgba(255, 255, 255, 0.08);
+  --seg: #0d0d0d;
+  --seg-active: var(--brand-orange);
+  --seg-active-ink: #111111;
+  --pill-bg: rgba(255, 255, 255, 0.06);
+  --bar-track: rgba(255, 255, 255, 0.14);
+  --topbar-bg: rgba(11, 11, 11, 0.86);
+  --rail-bg: linear-gradient(180deg, #141414, #101010);
+  --tooltip-bg: #1f1f1f;
+  --toast-bg: #191919;
+  --scrim: rgba(0, 0, 0, 0.72);
+  --state-bg: rgba(25, 25, 25, 0.7);
+  --skeleton-a: rgba(255, 255, 255, 0.06);
+  --skeleton-b: rgba(255, 255, 255, 0.14);
+
+  --grid-line: rgba(255, 255, 255, 0.05);
+  --aurora-1: rgba(255, 121, 0, 0.14);
+  --aurora-2: rgba(37, 99, 235, 0.16);
+  --aurora-3: rgba(23, 59, 143, 0.12);
+  color-scheme: dark;
+}
+
+/* Signature cut-corner panel shape (HUD language, not another rounded card). */
+.cut-br {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--cut)),
+    calc(100% - var(--cut)) 100%,
+    0 100%
+  );
+}
+.cut-tl {
+  clip-path: polygon(var(--cut) 0, 100% 0, 100% 100%, 0 100%, 0 var(--cut));
+}
